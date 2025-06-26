@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+
+:root {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  background-color: #3C6E71;
+  color: #D9D9D9;
+  scroll-behavior: smooth;
+}
