@@ -15,25 +15,28 @@ const cardDetails = [
   {
     image: coding1,
     title: "Weather App",
-    description: "A real-time weather forecasting app built using HTML, CSS, and JavaScript with OpenWeather API integration."
+    description:
+      "A real-time weather forecasting app built using HTML, CSS, and JavaScript with OpenWeather API integration.",
   },
   {
     image: coding2,
     title: "E-commerce Website",
-    description: "An online shopping platform developed with Flask and MongoDB, featuring user login, cart, and product listings."
+    description:
+      "An online shopping platform developed with Flask and MongoDB, featuring user login, cart, and product listings.",
   },
   {
     image: coding3,
     title: "Portfolio Website",
-    description: "A personal portfolio site designed with React and Tailwind CSS to showcase my projects and skills."
+    description:
+      "A personal portfolio site designed with React and Tailwind CSS to showcase my projects and skills.",
   },
   {
     image: coding4,
     title: "Logistics Dashboard",
-    description: "A logistics data dashboard built during my WIL project using React and Chart.js to visualize delivery metrics."
-  }
+    description:
+      "A logistics data dashboard built during my WIL project using React and Chart.js to visualize delivery metrics.",
+  },
 ];
-
 
 export default function About() {
   const refProjects = useRef();
@@ -49,7 +52,7 @@ export default function About() {
       {/* Projects Heading */}
       <motion.div
         ref={refProjects}
-        className="flex justify-center text-6xl font-bold my-10"
+        className="min-h-[10vh] mt-20 flex justify-center text-4xl md:text-5xl xl:text-6xl font-bold my-10 text-center"
         initial={{ opacity: 0, y: 100 }}
         animate={inViewProjects ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -60,7 +63,7 @@ export default function About() {
       {/* Cards */}
       <motion.div
         ref={refCards}
-        className="flex flex-wrap justify-start items-start gap-10 px-10"
+        className="flex flex-col md:flex-row flex-wrap justify-start items-center gap-10 px-4 md:px-10"
         initial={{ opacity: 0, y: 100 }}
         animate={inViewCards ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.9, ease: "easeOut" }}
@@ -73,7 +76,7 @@ export default function About() {
       {/* Tech Heading */}
       <motion.div
         ref={refTech}
-        className="flex justify-center text-6xl font-bold my-10"
+        className=" mt-30 flex justify-center text-4xl md:text-5xl xl:text-6xl font-bold my-10 text-center"
         initial={{ opacity: 0, y: 100 }}
         animate={inViewTech ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -83,7 +86,7 @@ export default function About() {
 
       {/* Tech Icons */}
       <motion.div
-        className="flex justify-center gap-10 text-6xl"
+        className="mt-20 flex flex-wrap justify-center gap-6 text-4xl md:text-5xl"
         initial={{ opacity: 0 }}
         animate={inViewTech ? { opacity: 1 } : {}}
         transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
@@ -99,7 +102,7 @@ export default function About() {
         ].map((item, i) => (
           <motion.div
             key={i}
-            className={`text-[${item.color}]`}
+            style={{ color: item.color }}
             animate={{ y: [0, -20, 0] }}
             transition={{
               duration: 1.5,
@@ -108,7 +111,6 @@ export default function About() {
               ease: "easeInOut",
               delay: i * 0.1,
             }}
-            style={{ color: item.color }}
           >
             {item.icon}
           </motion.div>
