@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import Footer from "./Footer.jsx";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const refContact = useRef();
@@ -9,6 +9,14 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, e.target, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+    .then((result) => {
+        console.log(result.text);
+        alert("Message sent!");
+    }, (error) => {
+        console.log(error.text);
+        alert("Failed to send message.");
+    });
   }
 
   return (
@@ -76,6 +84,8 @@ export default function Contact() {
               Name
             </label>
             <input
+              required
+              name="from_name"
               type="text"
               placeholder="name..."
               className="w-full px-2 py-2 border-b border-gray-300 focus:outline-none focus:border-orange-400"
@@ -87,6 +97,8 @@ export default function Contact() {
               Email
             </label>
             <input
+              required
+              name="from_email"
               type="email"
               placeholder="you@example.com"
               className="w-full px-2 py-2 border-b border-gray-300 focus:outline-none focus:border-orange-400"
@@ -95,6 +107,8 @@ export default function Contact() {
           {/* Message */}
           <div>
             <textarea
+            required
+            name="message"
               rows="5"
               placeholder="write your message..."
               className="w-full mt-4 px-2 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-orange-400 resize-none"
