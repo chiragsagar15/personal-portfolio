@@ -27,14 +27,14 @@ export default function Main() {
           </span>
           <div className="mt-6 flex justify-center xl:justify-start flex-wrap gap-6">
             <motion.button
-              className="relative overflow-hidden px-6 py-2 text-base md:text-lg font-semibold border border-[#FF9E00] rounded"
+              className="relative overflow-hidden px-6 py-2 text-base md:text-lg font-semibold border md:border-[#FF9E00] rounded bg-#FF9E00 md:bg-transparent"
               whileHover={{
                 scale: 1.15,
                 backgroundColor: "#FF9E00",
                 cursor: "pointer",
                 boxShadow: "3px 3px 10px rgb(0, 0, 0, 0.5)",
               }}
-              whileTap={{ scale: [0.95, 1.0], backgroundColor: "#FF9E00" }}
+              whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
               onClick={() =>
                 window.open(
@@ -47,7 +47,7 @@ export default function Main() {
               Resume
             </motion.button>
 
-            <div className="flex gap-6 text-2xl md:text-3xl items-center">
+            <div className="flex gap-6 text-2xl md:text-3xl items-center color-#FF9E00 md:color-transparent">
               <motion.a
                 href="https://github.com/chiragsagar15?tab=repositories"
                 target="_blank"
@@ -57,7 +57,7 @@ export default function Main() {
                   color: "#FF9E00",
                   cursor: "pointer",
                 }}
-                whileTap={{ scale: [0.95, 1.0], color: "#FF9E00" }}
+                whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               >
                 <FaGithub />

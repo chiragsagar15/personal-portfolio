@@ -29,7 +29,7 @@ export default function Contact() {
         transition={{ duration: 0.8, ease: "easeInOut" }}
       >
         {/* Left Section */}
-        <div className="w-full xl:w-1/3 flex flex-col justify-start items-start gap-4 text-center xl:text-left">
+        <div className="w-full xl:w-1/3 flex flex-col xl:justify-start xl:items-start justify-center items-center gap-4 text-center xl:text-left">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
             Let's Get In Touch
           </h2>
