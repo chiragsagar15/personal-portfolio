@@ -1,14 +1,14 @@
 import { useState } from "react";
 import portfolioLogo from "../assets/portfolioLogo.png";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react"; // install: npm install lucide-react
+import { Menu, X } from "lucide-react";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <motion.nav
-      className="flex justify-between items-center px-6 mt-4 h-14 relative"
+      className="flex justify-around items-center px-6 mt-4 h-14 relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeOut" }}

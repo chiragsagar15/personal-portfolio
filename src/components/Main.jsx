@@ -34,7 +34,7 @@ export default function Main() {
                 cursor: "pointer",
                 boxShadow: "3px 3px 10px rgb(0, 0, 0, 0.5)",
               }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: [0.95, 1.0], backgroundColor: "#FF9E00" }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
               onClick={() =>
                 window.open(
@@ -57,7 +57,7 @@ export default function Main() {
                   color: "#FF9E00",
                   cursor: "pointer",
                 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: [0.95, 1.0], color: "#FF9E00" }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               >
                 <FaGithub />
@@ -71,7 +71,7 @@ export default function Main() {
                   color: "#FF9E00",
                   cursor: "pointer",
                 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: [0.95, 1.0], color: "#FF9E00" }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               >
                 <FaLinkedin />
