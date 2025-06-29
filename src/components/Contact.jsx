@@ -9,14 +9,23 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, e.target, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
-    .then((result) => {
-        console.log(result.text);
-        alert("Message sent!");
-    }, (error) => {
-        console.log(error.text);
-        alert("Failed to send message.");
-    });
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        e.target,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Message sent!");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Failed to send message.");
+        }
+      );
   }
 
   return (
@@ -41,7 +50,7 @@ export default function Contact() {
             Whether you have a question, want to work together, or simply want
             to say hi, feel free to reach out — I’d love to hear from you!
           </p>
-          <div className="flex justify-center xl:justify-start items-center gap-6 text-2xl md:text-3xl">
+          <div className="flex justify-center xl:justify-start items-center gap-6 text-2xl md:text-3xl text-[#FF9E00] md:text-[#D9D9D9]">
             <motion.a
               href="https://github.com/chiragsagar15?tab=repositories"
               target="_blank"
@@ -51,7 +60,7 @@ export default function Contact() {
                 color: "#FF9E00",
                 cursor: "pointer",
               }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.85 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
               <FaGithub />
@@ -65,7 +74,7 @@ export default function Contact() {
                 color: "#FF9E00",
                 cursor: "pointer",
               }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.85 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
               <FaLinkedin />
@@ -107,8 +116,8 @@ export default function Contact() {
           {/* Message */}
           <div>
             <textarea
-            required
-            name="message"
+              required
+              name="message"
               rows="5"
               placeholder="write your message..."
               className="w-full mt-4 px-2 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-orange-400 resize-none"
