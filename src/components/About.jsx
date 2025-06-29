@@ -63,7 +63,7 @@ export default function About() {
       {/* Cards */}
       <motion.div
         ref={refCards}
-        className="flex flex-col md:flex-row flex-wrap justify-start items-center gap-10 px-4 md:px-10"
+        className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-10 px-4 md:px-10"
         initial={{ opacity: 0, y: 100 }}
         animate={inViewCards ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.9, ease: "easeOut" }}
